@@ -8,7 +8,9 @@ library(socviz)
 ## 3.3 Mappings Link Data to Things You See
 
 # Reminder of what gapminder looks like
-gapminder
+gapminder <- gapminder
+view(gapminder)
+
 
 p <- # Defining the landscape of our graph 
 p <- ggplot(data = gapminder)
@@ -112,7 +114,7 @@ p + geom_point(color = "purple") +
 # Alpha refers to the opacity of a geom. Values of alpha range from 0 to 1.
 # With lower values corresponding to more transparent colors. 
 
-p + geom_point(alpha = 0.3) +
+p + geom_point(alpha = 0.1) +
   geom_smooth(color = "orange", se = FALSE, size = 2, method = "lm") +
   scale_x_log10()
 
@@ -121,7 +123,7 @@ p + geom_point(alpha = 0.3) +
 
 p + geom_point(alpha = 0.3) + geom_smooth(method = "gam") +
   scale_x_log10(labels = scales::dollar) +
-  labs(x = "GDP Per Capita", y = "Life Expectancy in Years",
+  labs(x = "log GDP Per Capita", y = "Life Expectancy in Years",
        title = "Economic Growth and Life Expectancy",
        subtitle = "Data points are country-years",
        caption = "Source: Gapminder.")
