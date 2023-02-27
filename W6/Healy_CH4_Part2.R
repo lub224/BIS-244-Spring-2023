@@ -8,7 +8,7 @@ library(tidyverse)
 library(socviz)
 
 # Reminder of what is in gss_sm data
-
+gss_sm <- gss_sm
 View(gss_sm)
 str(gss_sm)
 
