@@ -5,6 +5,8 @@ library(tidyverse)
 library(socviz)
 
 # Reloading by_country from organdata
+organdata <- organdata
+view(organdata)
 
 by_country <- organdata %>% group_by(consent_law, country) %>%
   summarize(donors_mean= mean(donors, na.rm = TRUE),
@@ -13,6 +15,8 @@ by_country <- organdata %>% group_by(consent_law, country) %>%
             health_mean = mean(health, na.rm = TRUE),
             roads_mean = mean(roads, na.rm = TRUE),
             cerebvas_mean = mean(cerebvas, na.rm = TRUE))
+
+view(by_country)
 
 by_country
 # donors. Organ Donation rate per million population.
@@ -31,7 +35,7 @@ p + geom_point() + geom_text(mapping = aes(label = country))
 p <- ggplot(data = by_country,
             mapping = aes(x = roads_mean, y = donors_mean))
 
-p + geom_point() + geom_text(mapping = aes(label = country), hjust = -.1)
+p + geom_point() + geom_text(mapping = aes(label = country), hjust = -.1, vjust=-.1)
       
 # ======================= hands-on 1 vjust ================
 
@@ -50,7 +54,7 @@ p + geom_point()  + geom_text_repel()
 
 # A look at date in elections_historic
 View(elections_historic)
-
+electionshistoric <- electionshistoric
 elections_historic %>% select(2:7)       
 
 
