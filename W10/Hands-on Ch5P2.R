@@ -1,4 +1,10 @@
 ## Hands-on Ch5p2
+<<<<<<< HEAD
+=======
+# Part 1
+# Question: By using *vjust* argument in geom_text() function, label all points in the vertical direction above or below each point. (two plots should be drawn, below and above each point by changing the value of *vjust*)
+# ========================== Answer part a =====================
+>>>>>>> main
 
 library(gapminder)
 library(tidyverse)
@@ -18,22 +24,33 @@ by_country <- organdata %>% group_by(consent_law, country) %>%
 
 view(by_country)
 
+<<<<<<< HEAD
 by_country
+=======
+# Part 2)
+# For the summarized *gss_sm* dataset grouped by only *padeg*, laebl the mean of children and siblings based on the paternal degree.
+# ========================== Answer part b =====================
+>>>>>>> main
 
 # Part 1
 # Question: By using *vjust* argument in geom_text() function, label all points in the vertical direction above or below each point. (two plots should be drawn, below and above each point by changing the value of *vjust*)
 # ========================== Answer part a =====================
 
+<<<<<<< HEAD
 p <- ggplot(data = by_country,
             mapping = aes(x = roads_mean, y = donors_mean))
 
 p + geom_point() + geom_text(mapping = aes(label = country), hjust = -.1, vjust=-.15)
+=======
+
+>>>>>>> main
 
 
 # Part 2)
 # For the summarized *gss_sm* dataset grouped by only *padeg*, laebl the mean of children and siblings based on the paternal degree.
 # ========================== Answer part b =====================
 
+<<<<<<< HEAD
 gss_sm
 
 padeg.df <- gss_sm %>% group_by(padeg) %>%
@@ -43,12 +60,19 @@ padeg.df <- gss_sm %>% group_by(padeg) %>%
 p <- ggplot(padeg.df, aes(x = children_mean, y = siblings_mean,
                                     label = padeg))  
 p + geom_point() + geom_text_repel()
+=======
+## Part 3) 
+# Question: For the by-country dataframe, choose observations from the united state of america (ccdoe=USA) after 1998, and then highlight them in the plot of road fatalities average against the average percentage of donors. 
+# ========================== Answer part c =====================
+
+>>>>>>> main
 
 
 ## Part 3) 
 # Question: For the organdata dataframe, choose observations from the united state of america (ccdoe=USA) after 1998, and then highlight them in the plot of road fatalities average against the average percentage of donors. 
 # ========================== Answer part c =====================
 
+<<<<<<< HEAD
 organdata$ind <- organdata$ccode %in% c("USA") &
   organdata$year > 1998
 
@@ -75,4 +99,9 @@ p + geom_point() +
 
 
 
+=======
+## Part 4)
+# Using gapminder dataset, specify the outliers in the plot of gdpPercap over lifeExp. 
+# ========================== Answer part d =====================
+>>>>>>> main
 
